@@ -1,0 +1,10 @@
+@use '/styles/lib/var.scss';
+@use '/styles/lib/breakpoint.scss';
+
+.intro_section{
+    padding-top: var.$navbar_h;
+    h1{
+        padding-top: 30vh;
+        text-align: center;
+    }
+}

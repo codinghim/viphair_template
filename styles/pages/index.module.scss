@@ -1,0 +1,100 @@
+@use '/styles/lib/var.scss';
+@use '/styles/lib/breakpoint.scss';
+
+.intro_section{
+    position: relative;
+    padding-top: var.$navbar_h;
+    .main_image_container{
+        position: relative;
+        margin: 5vh auto;
+        width: 90%;
+        max-height: 150vw;
+        max-width: 1500px;
+        min-height: 500px;
+        height: 80vh;
+    }
+}
+
+.invite_section{
+    background-color: var.$bg_color1;
+}
+
+.desc_section{
+    .desc_container{
+        display: flex;
+        height: 550px;
+        margin: 20vh auto;
+        .desc_image_container_outer{
+            position: relative;
+            width: 50%;
+            min-width: 400px;
+            height: 550px;
+            
+            .desc_image_container_inner_left{
+                @extend %desc_image_container_inner;
+                float: right;
+            }
+            .desc_image_container_inner_right{
+                @extend %desc_image_container_inner;
+                float: left;
+            }
+            %desc_image_container_inner{
+                position: relative;
+                width: 400px;
+                height: 550px;
+                margin: 0 2.5vw;
+            }
+        }
+        .desc_p_container_left{
+            @extend %desc_p_container;
+            .desc_p_container_inner{
+                align-items: flex-end;
+                position: relative;
+                float: right;
+                margin: 0 2.5vw;
+                p{  
+                    text-align: right;                    
+                }
+            }
+        }
+        .desc_p_container_right{
+            @extend %desc_p_container;
+            text-align: left;
+            .desc_p_container_inner{
+                position: relative;
+                float: left;
+                margin: 0 2.5vw;
+                p{
+                    text-align: left;
+                }
+            }
+            
+        }
+        %desc_p_container{
+            width: 50%;
+            height: 550px;
+            .desc_p_container_inner{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: 100%;
+                justify-content: space-evenly;
+                p{
+                    font-size: var.$sm_font;
+                    position:relative;
+                    width: 50%;
+                    min-width: 400px;
+                }
+                a{  
+                    font-size: var.$sm_font;
+                    width: 200px;
+                    border: 1px solid black;
+                    text-align: center;
+                    padding: 20px;
+                }
+            }
+            
+        }
+        
+    }
+}

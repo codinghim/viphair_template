@@ -1,0 +1,89 @@
+@use '/styles/lib/var';
+@use '/styles/lib/breakpoint';
+
+.contact_us_form{
+    display:grid;
+    height: 100%;
+    width: 50%;
+    margin: 0 auto;
+    padding: 5px 0;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 20% 20% 40% 20%;
+    overflow-y: hidden;
+    > *:nth-child(1){
+        grid-column: 1/3;
+        text-align: center;
+        color: var.$color3;
+        margin-top: 20px;
+    }
+    >*:nth-child(2), >*:nth-child(3){
+        text-align: center;
+        width: 80%;
+        margin: 20px auto;
+    }
+    >*:nth-child(4){
+        grid-column: 1/3;
+        width: 90%;
+        margin: 20px auto;
+    }
+    >*:nth-child(5){
+        grid-column: 1/3;
+        width: 10%;
+        margin: 10px auto;
+    }
+    input, textarea{
+        border: none;
+        border-bottom: 1px solid var.$color3;
+        background-color: transparent;
+        color: $color3;
+    }
+    input:focus, textarea:focus{
+        border-bottom: 3px solid var.$color3;
+        outline: none;
+    }
+    button{
+        border: 1px solid var.$color3;
+        color: $color3;
+        border-radius: 20px;
+        background-color: var.$color4;
+    }
+    button:hover{
+        border: 2px solid var.$color3;
+        background-color: rgb(37, 37, 33);
+    }
+
+    input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active{
+        -webkit-box-shadow: 0 0 0 30px var.$color4 inset !important;
+    }
+
+    @include breakpoint(mobile){
+        width: 90%;
+        >*:nth-child(2), >*:nth-child(3){
+            margin: 10px auto;
+        }
+        >*:nth-child(4){
+            margin: 5px auto;
+        }
+        >*:nth-child(5){
+            width: 30%;
+            margin: 5px auto;
+        }
+        button{
+            border-radius: 5px;
+        }
+    }
+    @include breakpoint(tablet){
+        width: 70%;
+        >*:nth-child(4){
+            margin: 10px auto;
+        }
+        >*:nth-child(5){
+            width: 30%;
+            margin: 10px auto;
+        }
+        >*:nth-child(5){
+            width: 20%;
+            margin: 10px auto;
+        }
+    }
+}

@@ -1,0 +1,19 @@
+@use '/styles/lib/var';
+
+
+.footer{
+    position:absolute;
+    bottom: 0;
+    width: 60vw;
+    height: var.$footer_h;
+    background-color: var.$bg_white;
+    margin: 0 20vw;
+    border-top: 1px solid var.$accent_color;
+    overflow: hidden;
+    .copyright{
+        color: var.$accent_color;
+        height: 20vh;
+        text-align: center;
+        padding-top: 8vh;
+    }
+}
