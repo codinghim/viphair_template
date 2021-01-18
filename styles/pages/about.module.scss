@@ -3,8 +3,115 @@
 
 .intro_section{
     padding-top: var.$navbar_h;
-    h1{
-        padding-top: 30vh;
+    // background-color: var.$bg_color1;
+    background-image: url("/images/hairsalon/salon2.jpg");
+    background-size: cover;
+    .p_container{
         text-align: center;
+        margin: 30vh auto 15vh auto;
+        padding: 10vh 0 0 0;
+        width: 1200px;
+        max-width: 90%;
+        max-height: 90%;
+        height: 600px;
+        background-color: var.$bg_color2;
+        border: 20px solid var.$bg_color2;
+        box-shadow: inset 0px 0px 0px 1px var.$bg_color1;
+        .p_about{
+            display: inline;
+            font-family: WorkRegular;
+            font-size: var.$md_font;
+        }
+        .p_title{
+            display: inline;
+            font-family: var.$logo_font;
+            font-size: var.$xl_font;
+        }
+        .p_word{
+            line-height: 2;
+            font-size: var.$sm_font;
+        }
+
+        @include breakpoint.breakpoint(mobile){
+            height: 430px;
+            padding: 5vh 0 0 0;
+            margin: 20vh auto 20vh auto;
+            .p_about{
+                font-size: var.$sm_font;
+            }
+            .p_title{
+                font-size: var.$lg_font;
+                margin-bottom: 5vh;
+            }
+            .p_word{
+                font-size: var.$xs_font;
+            }
+        }
+    }
+    .p_sub_container{
+        text-align: center;
+        padding: 10vh 0 0 0;
+        width: 90%;
+        max-width: 1024px;
+        margin: 0 auto;
+        p{
+            font-size: var.$sm_font;
+        }
+        @include breakpoint.breakpoint(mobile){
+            padding: 3vh 0 0 0;
+            p{
+                font-size: var.$xs_font;
+                
+            }
+        }
+    }
+}
+
+.team_section{
+    .team_section_title{
+        text-align: center;
+        font-size: var.$md_font;
+        font-weight: bold;
+        margin: 0 auto 10vh auto;
+    }
+    .divider_container{
+    
+    }
+    .team_grid{
+        width: 90%;
+        margin: 10vh auto;
+        // display: grid;
+        // flex-wrap: wrap;
+        // justify-content: space-around;
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+        grid-template-rows: 550px;
+
+        @include breakpoint.breakpoint(mobile){
+            grid-template-columns: 100%;
+        }
+        .member_card{
+            .member_image_container{
+                width: 200px;
+                height: 300px;
+                overflow: hidden;
+                margin: 0 auto;
+            }
+            .member_desc_container{
+                margin: 50px auto;
+                text-align: center;
+                line-height: 1.5;
+                font-size: var.$sm_font;
+                .member_name{
+                    
+                }
+                .member_instagram{
+                    
+                }
+                .member_position{
+
+                }
+            }
+        }
     }
 }

@@ -24,37 +24,12 @@ a {
 
 main{
   min-height: 100vh;
-  padding-bottom: var.$footer_h;
+//   padding-bottom: var.$footer_h;
 }
 
 section{
   min-height: 100vh;
   margin-bottom: 25vh;
-}
-
-@font-face{
-    font-family: Cinzel;
-    src: url("../public/fonts/Cinzel_Decorative/CinzelDecorative-Regular.ttf");
-}
-
-@font-face{
-    font-family: Dorsa;
-    src: url("../public/fonts/Dorsa/Dorsa-Regular.ttf");
-}
-
-@font-face{
-    font-family: Lato;
-    src: url("../public/fonts/Lato/Lato-Thin.ttf");
-}
-
-@font-face{
-    font-family: Lato300;
-    src: url("../public/fonts/Lato/Lato-Light.ttf");
-}
-
-@font-face{
-    font-family: SSP;
-    src: url("../public/fonts/Source_Sans_Pro/SourceSansPro-Light.ttf");
 }
 
 @font-face{
@@ -70,4 +45,9 @@ section{
 @font-face{
     font-family: WorkRegular;
     src: url("../public/fonts/Work_Sans/static/WorkSans-Regular.ttf");
+}
+
+.scroll_disabled{
+    height: 100vh;
+    overflow: hidden;
 }

@@ -1,14 +1,17 @@
 /* color */
-$primary_color:rgb(250, 200, 207);
-$accent_color: rgb(117, 117, 117);
+$primary_color: rgb(151, 153, 155);
+$accent_color:  rgb(245, 223, 77);
 $bg_white: white;
-$bg_color1: rgb(255, 240, 198);
-$bg_color2: rgb(201, 255, 199);
-
+$bg_color1: rgb(245, 223, 77);
+$bg_color2: rgb(151, 153, 155);
+$accent_color_opacity:  rgba(245, 223, 77, 0.5);
+$primary_color_opacity:  rgba(151, 153, 155, 0.5);
 
 /* Font sizes */
+$xxs_font: 13px;
 $xs_font: 15px;
 $sm_font: 20px;
+$xm_font: 28px;
 $md_font: 36px;
 $lg_font: 54px;
 $xl_font: 75px;
@@ -17,6 +20,26 @@ $xxl_font: 100px;
 /* height */
 $navbar_h: 12vh; //change value in /components/navbar.js
 $footer_h: 20vh;
-
+$navbar_h_m: 8vh;
 /* font */
 $logo_font: WorkThin; // Cinzel Dorsa Lato SSP Work Lato300
+$regular_font: WorkRegular;
+$light_font: WorkLight;
+
+
+/* button styling */
+%button_reg{
+    position: relative;
+    font-size: $sm_font;
+    font-family: WorkLight;
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 7px;
+    padding: 5px 20px;
+
+    &:hover{
+        background-color: $bg_color1;
+        color: black;
+        border-color: black;
+    }
+}

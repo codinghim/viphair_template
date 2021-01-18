@@ -1,10 +1,73 @@
 @use '/styles/lib/var.scss';
 @use '/styles/lib/breakpoint.scss';
 
-.intro_section{
+.gallery_section{
     padding-top: var.$navbar_h;
-    h1{
-        padding-top: 30vh;
+    .gallry_title_container{
+        min-height: 450px;
+        padding: 15vh 0;
+        // background-color: var.$primary_color;
+        // background: linear-gradient(to bottom right, var.$accent_color, var.$primary_color);
+        margin: 8vh auto 15vh auto;
         text-align: center;
+        overflow: hidden;
+        .gallery_title{
+            font-size: var.$lg_font;
+            margin: var.$lg_font;
+        }
+        .gallery_quote{
+            font-size: var.$sm_font;
+        }
+    }
+    .gallery_grid{
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+        grid-row-gap: 1vh;
+        grid-column-gap: 1vw;
+        margin: 15vh auto 0 auto;
+        width: 90%;
+        max-width: 1000px;
+        // border: 1px solid black;
+        place-items: center center;
+
+        @include breakpoint.breakpoint(tablet){
+            grid-template-columns: 50% 50%;
+        }
+        @include breakpoint.breakpoint(mobile){
+            grid-template-columns: 100%;
+            grid-row: 4vh;
+        }
+        
+        .gallery_image_container{
+            position: relative;
+            
+            .gallery_image_title_container{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 300px;
+                height: 450px;
+                background-color: rgba(0,0,0,0.5);            
+                transition-duration: 1s;
+                opacity: 0;
+                z-index: 990;
+                &:hover{
+                    opacity: 1;
+                }
+                &:active{
+                    opacity: 1;
+                }
+                .gallery_image_title{
+                    position: absolute;
+                    bottom: 2%;
+                    left: 4%;
+                    color: white;
+                    text-align: center;
+                    font-family: WorkThin;
+                    font-size: var.$md_font;
+                }
+    
+            }
+        }
     }
 }

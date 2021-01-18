@@ -1,15 +1,22 @@
 @use '/styles/lib/var';
+@use '/styles/lib/breakpoint.scss';
 
 .nav_logo{
     position: fixed;
     top: 1vw;
     left: 1vh;
     font-size: var.$xl_font;
-    z-index: 999;
+    z-index: 998;
     line-height: 0.85;
     text-align: left;
     overflow: hidden;
     font-family: var.$logo_font;
+    mix-blend-mode: difference;
+    color: white;
+    
+    @include breakpoint.breakpoint(mobile){
+        font-size: var.$lg_font;
+    }
 }
 .nav{
     display: flex; //grid
@@ -24,7 +31,12 @@
     padding: 30px 10%;
     font-size: var.$sm_font;
     transition-duration: 0.5s;
-    z-index: 998;
+    z-index: 997;
+    @include breakpoint.breakpoint(mobile){
+        font-size: var.$xs_font;
+        height: var.$navbar_h_m;
+        padding: 20px 3%;
+    }
 }
 
 .navLink_container{
@@ -32,7 +44,10 @@
 }
 .navLink{
     padding: 0px 10px 5px 10px;
-    margin: 0px 10px
+    margin: 0px 10px;
+    @include breakpoint.breakpoint(mobile){
+        margin: 0 5px;
+    }
 }
 
 .navLink:hover{
@@ -44,16 +59,10 @@
 }
 
 .reserve{
-    font-size: var.$sm_font;
-    font-family: WorkLight;
-    background-color: transparent;
-    border: 1px solid black;
-    border-radius: 7px;
-    padding: 5px 20px;
-
-    &:hover{
-        background-color: rgb(245, 245, 245, 0.1);
-        color: var.$accent_color;
-        border-color: var.$accent_color;
-    }
+    @extend %button_reg;
+    position: fixed;
+    right: 1vw;
+    bottom: 1vh;
+    border-color: black;
+    z-index: 999;
 }

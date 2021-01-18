@@ -2,9 +2,68 @@
 @use '/styles/lib/breakpoint.scss';
 
 .intro_section{
+    
     padding-top: var.$navbar_h;
-    h1{
-        padding-top: 30vh;
+    width: 90%;
+    max-width: 1000px;
+    min-height: 90%;
+    margin: 30vh auto;
+    background-color: var.$bg_color2;
+    border: 20px solid var.$bg_color2;
+    box-shadow: inset 0px 0px 0px 1px var.$bg_color1;
+    padding: 10vh 20px;
+
+   
+    .services_title{
+        text-align: center;
+        font-size: var.$lg_font;
+        margin: 10vh 0;
+    }
+    .services_description{
+        text-align: center;
+        font-size: var.$sm_font;
+        width: 90%;
+        max-width: 700px;
+        margin: 10vh auto;
+        line-height: 2;
+    }
+    .menu_card{
+        display: flex;
+        justify-content: space-between;
+        font-size: var.$xm_font;
+        padding: 10px;
+        border-bottom: 1px solid black;
+        line-height: 2;
+        margin-bottom: var.$md_font;
+    }
+    .services_notice{
+        font-size: var.$sm_font;
+        line-height: 2;
+        padding: 10px;
         text-align: center;
     }
+    @include breakpoint.breakpoint(mobile){
+        .services_title{
+            font-size: var.$md_font;
+            margin: 5vh 0;
+        }
+        .services_description{
+            font-size: var.$xxs_font;
+            width: 90%;
+            margin: 5vh auto;
+        }
+        .menu_card{
+            font-size: var.$xs_font;
+            margin-bottom: var.$md_font;
+        }
+        .services_notice{
+            font-size: var.$xxs_font;
+        }
+    }
+}
+
+.cursor{
+    width: 60px;
+    height: 30px;
+    background-color: var.$primary_color;
 }

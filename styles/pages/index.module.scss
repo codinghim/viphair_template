@@ -16,33 +16,127 @@
 }
 
 .invite_section{
-    background-color: var.$bg_color1;
+    position: relative;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // background-color: var.$primary_color;
+    color: var.$accent_color;
+    background: linear-gradient(to right, var.$primary_color_opacity, var.$primary_color 50%);
+    .shadowed_box{
+        position: absolute;
+        right: 5%;
+        bottom: 20vh;
+        width: 60vw;
+        max-width: 60vh;
+        height: 60vh;
+        background: linear-gradient(to right, var.$primary_color_opacity, rgb(141, 141, 141) 50%);
+        // background-color: var.$primary_color_opacity;
+        z-index: 900;
+        box-shadow: 3px 3px 10vw 5vw rgb(100, 100, 100);
+    }
+    .invite_desc_container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 901;
+        transform: translate3d(-10vw,0vh,0);
+        max-width: 90vw;
+        overflow:visible;
+        p{
+            margin-bottom: 50px;
+            font-size: var.$md_font;
+            @include breakpoint.breakpoint(mobile){
+                transform: translate3d(10vw,0vh,0);
+                font-size: var.$xm_font;
+            }
+            @include breakpoint.breakpoint(tablet){
+                transform: translate3d(10vw,0vh,0);
+                
+            }
+        }
+        button{
+            color: var.$accent_color;
+            border-color: var.$accent_color;
+            @extend %button_reg;    
+            margin: 0 auto;
+        }
+    }
+    
+
+    
+    
 }
 
 .desc_section{
+    margin: 25vh auto;
     .desc_container{
+        width: 90%;
         display: flex;
-        height: 550px;
-        margin: 20vh auto;
+        &:nth-child(1){
+            margin: 0vh auto 20vh auto;
+        }
+        @include breakpoint.breakpoint(mobile){
+            display: block;
+            margin: 0vh auto;
+            >*{
+                margin-bottom: 30vh;
+            }        
+        }
+        @include breakpoint.breakpoint(tablet){
+            display: block;
+            width: 60%;
+            margin: 0vh auto;
+            >*{
+                margin-bottom: 30vh;
+            }
+        }
         .desc_image_container_outer{
             position: relative;
             width: 50%;
             min-width: 400px;
             height: 550px;
+
+            @include breakpoint.breakpoint(mobile){
+                width: 100%;
+            }
+            @include breakpoint.breakpoint(tablet){
+                width: 100%;
+                min-height: 550px;
+            }
             
             .desc_image_container_inner_left{
                 @extend %desc_image_container_inner;
                 float: right;
+                @include breakpoint.breakpoint(mobile){
+                    float: none;
+                }
+                @include breakpoint.breakpoint(tablet){
+                    float: none;
+                }
             }
             .desc_image_container_inner_right{
                 @extend %desc_image_container_inner;
                 float: left;
+                @include breakpoint.breakpoint(mobile){
+                    float: none;
+                }
+                @include breakpoint.breakpoint(tablet){
+                    float: none;
+                }
             }
             %desc_image_container_inner{
                 position: relative;
                 width: 400px;
                 height: 550px;
                 margin: 0 2.5vw;
+                @include breakpoint.breakpoint(mobile){
+                    margin: 0 auto;
+                }
+                @include breakpoint.breakpoint(tablet){
+                    margin: 0 auto;
+                }
             }
         }
         .desc_p_container_left{
@@ -55,11 +149,14 @@
                 p{  
                     text-align: right;                    
                 }
+
+            }
+            @include breakpoint.breakpoint(mobile){
+                float: none;
             }
         }
         .desc_p_container_right{
             @extend %desc_p_container;
-            text-align: left;
             .desc_p_container_inner{
                 position: relative;
                 float: left;
@@ -68,22 +165,47 @@
                     text-align: left;
                 }
             }
+            @include breakpoint.breakpoint(mobile){
+                float: none;
+                align-items: none;
+            }
             
         }
         %desc_p_container{
             width: 50%;
-            height: 550px;
+            @include breakpoint.breakpoint(mobile){
+                width: 100%;
+            }
+            @include breakpoint.breakpoint(tablet){
+                width: 100%;
+            }
             .desc_p_container_inner{
                 display: flex;
                 flex-direction: column;
                 width: 100%;
                 height: 100%;
                 justify-content: space-evenly;
+                h1{
+                    line-height: 2;
+                }
                 p{
                     font-size: var.$sm_font;
                     position:relative;
                     width: 50%;
                     min-width: 400px;
+                    line-height: 2;
+                    @include breakpoint.breakpoint(mobile){
+                        min-width: 0;
+                        width: 100%;
+                        margin-bottom: 5vh;
+                        font-size: var.$xs_font;
+                    }
+                    @include breakpoint.breakpoint(tablet){
+                        min-width: 0;
+                        width: 100%;
+                        margin-bottom: 5vh;
+                        font-size: var.$xs_font;
+                    }
                 }
                 a{  
                     font-size: var.$sm_font;
@@ -91,6 +213,9 @@
                     border: 1px solid black;
                     text-align: center;
                     padding: 20px;
+                    &:hover{
+                        background-color: var.$accent_color;
+                    }
                 }
             }
             

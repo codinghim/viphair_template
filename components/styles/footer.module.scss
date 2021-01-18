@@ -1,19 +1,73 @@
 @use '/styles/lib/var';
-
+@use '/styles/lib/breakpoint.scss';
 
 .footer{
-    position:absolute;
-    bottom: 0;
-    width: 60vw;
-    height: var.$footer_h;
+    width: 90vw;
+    max-width: 1400px;
+    min-height: 40vh;
     background-color: var.$bg_white;
-    margin: 0 20vw;
-    border-top: 1px solid var.$accent_color;
+    margin: 0 auto;
+    border-top: 1px solid var.$primary_color;
     overflow: hidden;
+    .contact_info_container{
+        width: 100%;
+        min-height: 30vh;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        place-items: center center;
+        .info_container{
+            width: 100%;
+            margin: 0 auto;
+            .info_row{
+                max-width: 300px;
+                margin: 0 auto;
+                >*{
+                    font-size: var.$xs_font;
+                    text-align: center;
+                    line-height: 2;
+                    margin: 10px auto;
+                    overflow: hidden;
+                    @include breakpoint.breakpoint(mobile){
+                        font-size: var.$xxs_font;
+                    }
+                }
+                .address{
+                    cursor: url('/icons/map_cursor.png'), default;
+                }
+                .number{
+                    cursor: url('/icons/call_cursor.png'), default;
+                }
+            }
+            .hour_row{
+                max-width: 300px;
+                display: flex;
+                justify-content: space-around;
+                margin: 0 auto;
+                .hour{
+                    text-align: center;
+                    line-height: 2;
+                    margin: 10px auto;
+                    font-size: var.$xs_font;
+                    @include breakpoint.breakpoint(mobile){
+                        font-size: var.$xxs_font;
+                    }
+                }
+            }
+            
+            
+        }
+    }
+    .icons_container{
+        height: 5vh;
+        width: 60px;
+        margin: 0 auto;
+        padding-top: 20px;
+        overflow: visible;
+    }
     .copyright{
-        color: var.$accent_color;
-        height: 20vh;
+        color: var.$primary_color;
+        height: 15vh;
         text-align: center;
-        padding-top: 8vh;
+        padding-top: 5vh;
     }
 }

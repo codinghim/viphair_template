@@ -2,7 +2,7 @@ import Styles from './styles/contactForm.module.scss'
 // import emailjs from 'emailjs-com';
 
 const ContactForm = () => {
-
+    
     //send Email function using Emailjs
     // const sendEmail = (e) => {
     //     //set up env variable in next.config.js before using
