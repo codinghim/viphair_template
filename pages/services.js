@@ -1,13 +1,13 @@
 import { useEffect } from 'react'
 import Layout from '../components/Layout'
-import { hideNavDiv, resizeReserve } from '../lib/navbar'
+import { mobileNav, closeNavMenu } from '../lib/navbar'
 import Styles from '../styles/pages/services.module.scss'
 
 const Services = () => {
     useEffect(()=>{
-        resizeReserve()
-        hideNavDiv()
-    },[])
+        closeNavMenu()
+        mobileNav()
+    })
     const menuArr = [
         {"title": "haircut", "price": "$ 35 - $ 150"},
         {"title": "color", "price": "$ 100 - $ 500"},

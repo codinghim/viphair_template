@@ -2,12 +2,13 @@ import Layout from '../components/Layout'
 import Styles from '../styles/pages/about.module.scss'
 import Image from 'next/image'
 import { useEffect } from 'react'
-import { resizeReserve } from '../lib/navbar'
+import { mobileNav, closeNavMenu } from '../lib/navbar'
 
 const About = () => {
     useEffect(()=>{
-        resizeReserve()
-    },[])
+        closeNavMenu()
+        mobileNav()
+    })
     return(
         <>
         <Layout>

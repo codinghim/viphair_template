@@ -32,6 +32,7 @@
     font-size: var.$sm_font;
     transition-duration: 0.5s;
     z-index: 997;
+    overflow: hidden;
     @include breakpoint.breakpoint(mobile){
         font-size: var.$xs_font;
         height: var.$navbar_h_m;
@@ -59,10 +60,54 @@
 }
 
 .reserve{
-    @extend %button_reg;
     position: fixed;
-    right: 1vw;
-    bottom: 1vh;
-    border-color: black;
+    right: 2vw;
+    bottom: 2vh;
     z-index: 999;
+    // box-shadow: 0px 0px 10px 1px rgba(34, 34, 34, 0.1);
+    cursor: pointer;
+}
+
+.navbar_m{
+    position:fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var.$navbar_h_m;
+    background-color: var.$bg_white;
+    justify-content: flex-end;
+    padding: 30px 10%;
+    font-size: var.$sm_font;
+    transition-duration: 0.5s;
+    z-index: 997;
+
+    span{
+        position: absolute;
+        right: 5vw;
+        top: 2vh;
+    }
+}
+
+.navLink_container_m{
+    position:fixed;
+    top:0;
+    right:0;
+    width: 200px;
+    height: 100vh;
+    background-color: white;
+    z-index:999;
+    padding: 10vh 10px;
+    transform: translateX(200px);
+    transition-duration: 0.8s;
+    >*{
+        display: block;
+        padding: 10px;
+        font-size: var.$sm_font;
+    }
+    .close_nav_m{
+        font-size: var.$md_font;
+        position: absolute;
+        top: 1vh;
+        right: 1vh;
+    }
 }

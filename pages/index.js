@@ -3,15 +3,14 @@ import Styles from '../styles/pages/index.module.scss'
 import Layout from '../components/Layout'
 import Image from 'next/image'
 import Link from 'next/link'
-import { resizeReserve } from '../lib/navbar'
-import {useEffect} from 'react'
+import { mobileNav, closeNavMenu } from '../lib/navbar'
+import { useEffect } from 'react'
 
 export default function Home() {
-
     useEffect(()=>{
-        resizeReserve()
-    },[])
-    
+        closeNavMenu()
+        mobileNav()
+    })
     return (
         <>
         <Head>

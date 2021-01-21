@@ -3,13 +3,14 @@ import Styles from '../styles/pages/style.module.scss'
 import { getImages } from '../lib/gallery'
 import Image from 'next/image'
 import { useEffect } from 'react'
-import { resizeReserve } from '../lib/navbar'
+import { mobileNav, closeNavMenu } from '../lib/navbar'
 
 const Style = ({dir}) => {
 
     useEffect(()=>{
-        resizeReserve()
-    },[])
+        closeNavMenu()
+        mobileNav()
+    })
 
     const removeExtension = (filename) =>{
         let result = filename.substr(0, filename.lastIndexOf('.')) || filename;
