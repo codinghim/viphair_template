@@ -41,7 +41,7 @@ export default function Home() {
                 <div className={Styles.desc_container}>
                     <div className={Styles.desc_image_container_outer}>
                         <div className={Styles.desc_image_container_inner_left}>
-                        <Image src="/images/hair/ombre_flipped.jpg" layout="fill" objectFit="cover"/>
+                        <Image src="/images/hair/Ombre_flipped.jpg" layout="fill" objectFit="cover"/>
                         </div>
                     </div>
                     <div className={Styles.desc_p_container_right}>
@@ -67,7 +67,7 @@ export default function Home() {
                     </div>
                     <div className={Styles.desc_image_container_outer}>
                         <div className={Styles.desc_image_container_inner_right}>
-                        <Image src="/images/hair/modern.jpg" layout="fill" objectFit="cover"/>
+                        <Image src="/images/hair/Modern.jpg" layout="fill" objectFit="cover"/>
                         </div>
                         
                     </div>
