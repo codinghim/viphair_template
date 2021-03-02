@@ -1,5 +1,5 @@
 @use './lib/var';
-
+@use './lib/breakpoint.scss';
 
 html,
 body {
@@ -31,6 +31,28 @@ section{
   min-height: 100vh;
   margin-bottom: 25vh;
 }
+
+/* scroll bar */
+::-webkit-scrollbar {
+    width: 10px;
+    @include breakpoint.breakpoint(mobile){
+        width: 5px;
+    }
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+  
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(82, 82, 82);
+}
+  
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(78, 78, 78);
+}
+
 
 @font-face{
     font-family: WorkThin;
